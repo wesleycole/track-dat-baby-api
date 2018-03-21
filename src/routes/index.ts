@@ -1,6 +1,6 @@
 import * as Hapi from 'hapi';
-import babyRoute from './baby';
+import babyRoutes from './baby';
 
 export default function(server: Hapi.Server) {
-	babyRoute(server);
+	babyRoutes(server);
 }
