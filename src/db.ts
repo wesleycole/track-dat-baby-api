@@ -1,7 +1,10 @@
 import * as Mongoose from 'mongoose';
 import { databaseConfig } from './config';
+import { Baby, BabyModel } from './models/baby';
 
-export interface Database {}
+export interface Database {
+	babyModel: Mongoose.Model<Baby>;
+}
 
 export function init(): Database {
 	(<any>Mongoose).Promise = Promise;
@@ -16,5 +19,7 @@ export function init(): Database {
 		console.log(`Connected to database: ${databaseConfig.connectionString}`);
 	});
 
-	return {}
+	return {
+		babyModel: BabyModel
+	}
 }

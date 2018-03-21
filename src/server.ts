@@ -2,6 +2,7 @@ import * as Hapi from 'hapi';
 import { Database } from './db';
 import { serverConfig } from './config';
 import { Plugin } from './plugins';
+import routes from './routes';
 
 export async function init(db: Database): Promise<Hapi.Server> {
 	try {
@@ -29,6 +30,8 @@ export async function init(db: Database): Promise<Hapi.Server> {
 
 		await Promise.all(pluginPromises);
 		console.log('All Plugins registered');
+
+		routes(server);
 
 		return server;
 	} catch (err) {
