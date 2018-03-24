@@ -4,6 +4,7 @@
   "description": "Node/Hapi API for Track Dat Baby",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/index.js",
     "build": "gulp",
     "test": "jest",
     "watch": "nodemon --watch dist dist/index.js"
