@@ -11,10 +11,11 @@ export function init(): Database {
 	Mongoose.connect(process.env.MONGOURL || databaseConfig.connectionString);
 
 	let db = Mongoose.connection;
+	/* istanbul ignore next */
 	db.on('error', () => {
 		console.error(`Unable to connect to database: ${databaseConfig.connectionString}`);
 	});
-
+	/* istanbul ignore next */
 	db.once('open', () => {
 		console.log(`Connected to database: ${databaseConfig.connectionString}`);
 	});

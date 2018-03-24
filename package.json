@@ -26,7 +26,11 @@
     "collectCoverageFrom": [
       "**/src/**/*.{ts}",
       "!**/node_modules/**",
-      "!**/vendor/**"
+      "!**/vendor/**",
+      "!**/src/index.ts",
+      "!**/src/server.ts",
+      "!**/src/db.ts",
+      "!**/src/config.ts"
     ]
   },
   "author": "Wes Cole <wesley.cole87@gmail.com>",
